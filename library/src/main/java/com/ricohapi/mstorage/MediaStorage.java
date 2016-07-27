@@ -68,9 +68,6 @@ public class MediaStorage {
             @Override
             public void onCompleted(AuthResult result) {
                 try {
-                    if (result.getAccessToken() == null) {
-                        throw new RicohAPIException(0, "wrong usage: use the connect method to get an access token.");
-                    }
                     RicohAPIRequest request = new RicohAPIRequest(ENDPOINT);
                     Map<String, String> header = new HashMap<>();
                     header.put("Authorization", "Bearer " + result.getAccessToken());
@@ -91,9 +88,8 @@ public class MediaStorage {
             }
 
             @Override
-            public void onThrowable(Throwable t) {
-                t.printStackTrace();
-                handler.onThrowable(t);
+            public void onThrowable(Throwable e) {
+                handler.onThrowable(new RicohAPIException(0, "wrong usage: use the connect method to get an access token."));
             }
         });
     }
@@ -103,10 +99,6 @@ public class MediaStorage {
             @Override
             public void onCompleted(AuthResult result) {
                 try {
-                    if (result.getAccessToken() == null) {
-                        throw new RicohAPIException(0, "wrong usage: use the connect method to get an access token.");
-                    }
-
                     Map<String, String> header = new HashMap<>();
                     header.put("Authorization", "Bearer " + result.getAccessToken());
 
@@ -127,9 +119,8 @@ public class MediaStorage {
             }
 
             @Override
-            public void onThrowable(Throwable t) {
-                t.printStackTrace();
-                handler.onThrowable(t);
+            public void onThrowable(Throwable e) {
+                handler.onThrowable(new RicohAPIException(0, "wrong usage: use the connect method to get an access token."));
             }
         });
     }
@@ -139,9 +130,6 @@ public class MediaStorage {
             @Override
             public void onCompleted(AuthResult result) {
                 try {
-                    if (result.getAccessToken() == null) {
-                        throw new RicohAPIException(0, "wrong usage: use the connect method to get an access token.");
-                    }
                     RicohAPIRequest request;
                     Map<String, String> header = new HashMap<>();
                     header.put("Authorization", "Bearer " + result.getAccessToken());
@@ -187,9 +175,8 @@ public class MediaStorage {
             }
 
             @Override
-            public void onThrowable(Throwable t) {
-                t.printStackTrace();
-                handler.onThrowable(t);
+            public void onThrowable(Throwable e) {
+                handler.onThrowable(new RicohAPIException(0, "wrong usage: use the connect method to get an access token."));
             }
         });
     }
@@ -199,9 +186,6 @@ public class MediaStorage {
             @Override
             public void onCompleted(AuthResult result) {
                 try {
-                    if (result.getAccessToken() == null) {
-                        throw new RicohAPIException(0, "wrong usage: use the connect method to get an access token.");
-                    }
                     RicohAPIRequest request = new RicohAPIRequest(ENDPOINT + "/" + mediaId);
                     Map<String, String> header = new HashMap<>();
                     header.put("Authorization", "Bearer " + result.getAccessToken());
@@ -221,9 +205,8 @@ public class MediaStorage {
             }
 
             @Override
-            public void onThrowable(Throwable t) {
-                t.printStackTrace();
-                handler.onThrowable(t);
+            public void onThrowable(Throwable e) {
+                handler.onThrowable(new RicohAPIException(0, "wrong usage: use the connect method to get an access token."));
             }
         });
     }
@@ -233,9 +216,6 @@ public class MediaStorage {
             @Override
             public void onCompleted(AuthResult result) {
                 try {
-                    if (result.getAccessToken() == null) {
-                        throw new RicohAPIException(0, "wrong usage: use the connect method to get an access token.");
-                    }
                     RicohAPIRequest request = new RicohAPIRequest(ENDPOINT + "/" + mediaId);
                     Map<String, String> header = new HashMap<>();
                     header.put("Authorization", "Bearer " + result.getAccessToken());
@@ -256,9 +236,8 @@ public class MediaStorage {
             }
 
             @Override
-            public void onThrowable(Throwable t) {
-                t.printStackTrace();
-                handler.onThrowable(t);
+            public void onThrowable(Throwable e) {
+                handler.onThrowable(new RicohAPIException(0, "wrong usage: use the connect method to get an access token."));
             }
         });
     }
@@ -268,9 +247,6 @@ public class MediaStorage {
             @Override
             public void onCompleted(AuthResult result) {
                 try {
-                    if (result.getAccessToken() == null) {
-                        throw new RicohAPIException(0, "wrong usage: use the connect method to get an access token.");
-                    }
                     RicohAPIRequest request = new RicohAPIRequest(ENDPOINT + "/" + mediaId + GET_META_PATH);
 
                     Map<String, String> header = new HashMap<>();
@@ -292,9 +268,8 @@ public class MediaStorage {
             }
 
             @Override
-            public void onThrowable(Throwable t) {
-                t.printStackTrace();
-                handler.onThrowable(t);
+            public void onThrowable(Throwable e) {
+                handler.onThrowable(new RicohAPIException(0, "wrong usage: use the connect method to get an access token."));
             }
         });
     }
@@ -304,9 +279,6 @@ public class MediaStorage {
             @Override
             public void onCompleted(AuthResult result) {
                 try {
-                    if (result.getAccessToken() == null) {
-                        throw new RicohAPIException(0, "wrong usage: use the connect method to get an access token.");
-                    }
                     Map<String, String> header = new HashMap<>();
                     header.put("Authorization", "Bearer " + result.getAccessToken());
                     if (fieldName == null) {
@@ -347,9 +319,8 @@ public class MediaStorage {
             }
 
             @Override
-            public void onThrowable(Throwable t) {
-                t.printStackTrace();
-                handler.onThrowable(t);
+            public void onThrowable(Throwable e) {
+                handler.onThrowable(new RicohAPIException(0, "wrong usage: use the connect method to get an access token."));
             }
         });
     }
@@ -359,9 +330,6 @@ public class MediaStorage {
             @Override
             public void onCompleted(AuthResult result) {
                 try {
-                    if (result.getAccessToken() == null) {
-                        throw new RicohAPIException(0, "wrong usage: use the connect method to get an access token.");
-                    }
                     RicohAPIRequest request;
 
                     for(String userMetaKey : userMeta.keySet()) {
@@ -392,9 +360,8 @@ public class MediaStorage {
             }
 
             @Override
-            public void onThrowable(Throwable t) {
-                t.printStackTrace();
-                handler.onThrowable(t);
+            public void onThrowable(Throwable e) {
+                handler.onThrowable(new RicohAPIException(0, "wrong usage: use the connect method to get an access token."));
             }
         });
     }
@@ -404,9 +371,6 @@ public class MediaStorage {
             @Override
             public void onCompleted(AuthResult result) {
                 try {
-                    if (result.getAccessToken() == null) {
-                        throw new RicohAPIException(0, "wrong usage: use the connect method to get an access token.");
-                    }
                     RicohAPIRequest request;
                     if (key == null) {
                         throw new RicohAPIException(0, "invalid parameter: null");
@@ -439,9 +403,8 @@ public class MediaStorage {
             }
 
             @Override
-            public void onThrowable(Throwable t) {
-                t.printStackTrace();
-                handler.onThrowable(t);
+            public void onThrowable(Throwable e) {
+                handler.onThrowable(new RicohAPIException(0, "wrong usage: use the connect method to get an access token."));
             }
         });
     }
